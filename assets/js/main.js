@@ -1,60 +1,22 @@
 var myMenu = [
-    { page: "Home", link: "#destiny"},
+    { page: "Home", link: "#infinite"},
     { page: "About us", link: "#aboutus" },
     { page: "Testimonials", link: "#testimonials" },
     { page: "Gallery", link: "#gallery" },
     { page: "Contact", link: "#contact" },
-    { page: "Author", link: "author.html"}
+    { page: "Author", link: 'author.html'}
   ];
 
-function Menu() {
-    var container = document.getElementById('navbarSupportedContent');
-    var ul = document.createElement("ul");
-    // ul.id = "navbar";
-    ul.classList.add("navbar-nav", "fw-bold", "justify-content-end", "align-items-center", "flex-grow-1");
-  
-    myMenu.forEach(element => {
-      var li = document.createElement("li");
-      li.classList.add("nav-item");
-  
-      if (element.subMenu) {
-        var dropdown = document.createElement("li");
-        dropdown.classList.add("nav-item", "dropdown");
-  
-        var link = document.createElement("a");
-        link.classList.add("nav-link", "me-5", "active", "dropdown-toggle", "border-0");
-        link.href = element.link;
-        link.setAttribute("data-bs-toggle", "dropdown");
-        link.setAttribute("aria-expanded", "false");
-        link.innerHTML = element.page;
-  
-        var dropdownMenu = document.createElement("ul");
-        dropdownMenu.classList.add("dropdown-menu", "fw-bold");
-        element.subMenu.forEach(subElement => {
-          var subLi = document.createElement("li");
-          var subLink = document.createElement("a");
-          subLink.classList.add("dropdown-item");
-          subLink.href = subElement.link;
-          subLink.innerHTML = `${subElement.page} ${subElement.badge ? `<span class="badge bg-primary">${subElement.badge}</span>` : ""}`;
-          subLi.appendChild(subLink);
-          dropdownMenu.appendChild(subLi);
-        });
-  
-        dropdown.appendChild(link);
-        dropdown.appendChild(dropdownMenu);
-        ul.appendChild(dropdown);
-      } else {
-        var link = document.createElement("a");
-        link.classList.add("nav-link", "me-5");
-        link.href = element.link;
-        link.innerHTML = element.page;
-
-        li.appendChild(link);
-        ul.appendChild(li);
-      }
-    });
-  
-    container.appendChild(ul);
+function Menu(){
+  var m=document.getElementById("navbarSupportedContent");
+  for(let i=0; i<myMenu.length; i++){
+    m.innerHTML+=
+    `
+    <li class="nav-item">
+      <a class="nav-link tm-nav-link" href="${myMenu[i]["link"]}">${myMenu[i]["page"]}</a>
+    </li>
+      `
+    }
   }
   
 Menu();
@@ -84,17 +46,16 @@ let about4 = [
           </div>
           `
         }
-
       }
 
 aboutUs();
 
 let testimonials2 = [
   { img: "assets/img/testimonial-img-01.jpg", quote: "I always come here because I like their skills.", author: "Catherine Winston (Designer)"},
-  { img: "assets/img/testimonial-img-02.jpg", quote: "#destiny", author: "Dual Rocker (CEO)"},
-  { img: "assets/img/testimonial-img-03.jpg", quote: "#destiny", author: "Sandra Soft (Marketing)"},
-  { img: "assets/img/testimonial-img-04.jpg", quote: "#destiny", author: "Oliva Mendes (Designer)"},
-  { img: "assets/img/testimonial-img-02.jpg", quote: "#destiny", author: "Jacob Joker (CTO)"},
+  { img: "assets/img/testimonial-img-02.jpg", quote: "I enjoy their pictures, I am satisfied!", author: "Dual Rocker (CEO)"},
+  { img: "assets/img/testimonial-img-03.jpg", quote: "Nice work!", author: "Sandra Soft (Marketing)"},
+  { img: "assets/img/testimonial-img-04.jpg", quote: "They are great at this time when there is so much that is bad", author: "Oliva Mendes (Designer)"},
+  { img: "assets/img/testimonial-img-02.jpg", quote: "Well done!", author: "Jacob Joker (CTO)"},
 ];
 
 function test(){
