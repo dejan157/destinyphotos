@@ -31,22 +31,7 @@
             <i class="fas fa-bars navbar-toggler-icon"></i>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-            <!--   <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#infinite">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#aboutus">What We Do</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link tm-nav-link" href="#testimonials">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#gallery">Gallery</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#contact">Contact</a>
-              </li>  -->                   
+            <ul class="navbar-nav ml-auto">                  
             </ul>
           </div>        
         </div>
@@ -162,7 +147,31 @@
               <form action="" method="get">
                 <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
                 <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
-                <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
+                
+                <div class="col-md-6 mb-3" >
+                    <label for="gender" class="labelSize">Gender:</label><br/>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                      <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                      <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <p class="crveno font-italic d-none" id="greskaPol">You must select gender</p>
+                </div>
+
+                <textarea id="message" name="message" rows="4" placeholder="Message" class="tm-input" required></textarea>
+                 
+                <div class="mb-3">
+                  <div class="custom-checkbox">
+                    <label for="checkbox">
+                      <input type="checkbox" id="checkbox"> I want newsletter
+                    </label>
+                  </div>
+                  <p class="crveno font-italic d-none" id="checkGreska">You must accept agreement</p>
+                </div>
+
                 <button type="submit" class="btn tm-btn-submit">Submit</button>
               </form>
             </div>
@@ -201,8 +210,8 @@
             </div> 
         </div>
       </div>
-
-        <footer class="container-fluid mx-0 bg-footer text-center small tm-footer m-0">
+      
+      <!-- <footer class="container-fluid  bg-footer text-center small tm-footer">
           <div class="row justify-content-center align-items-center py-3">
               <div class="col-8 col-sm-5 col-lg-2 text-center copyright">
                   <p class="mb-0">All rights reserved &#169; Destiny Photos</p>
@@ -213,11 +222,34 @@
                       <li class="mg"><a href="assets/css/style.css"><i class="fa-brands fa-css3-alt"></i></a></li>
                       <li><a href="sitemap.xml"><i class="fa-solid fa-sitemap"></i></a></li>
                   </ul>
+                  
               </div>
           </div>
-        </footer>
-
+    </footer> -->
+    
     </section>
+    <div class="w-100">
+      <footer class="bg-footer text-center text-white w-100">
+      <div class="p-4 pb-0 w-100">
+        <section class="mb-4">
+          <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com/" role="button" target="_blank">
+            <i class="fa-brands fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="assets/js/main.js" role="button" target="_blank">
+            <i class="fa-brands fa-js"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="sitemap.xml" role="button" target="_blank">
+            <i class="fa-solid fa-sitemap"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="dokumentacija.pdf" role="button" target="_blank">
+            <i class="fa-solid fa-file"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="author.html" role="button" target="_blank">
+            <i class="fa-solid fa-user"></i></a>
+            <a href="#" class="scrollToTop">Scroll To Top</a>
+        </section>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Copyright: Destiny Photos
+      </div>
+    </footer>   
+    </div>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/jquery-1.9.1.min.js"></script>     

@@ -3,8 +3,7 @@ var myMenu = [
     { page: "About us", link: "#aboutus" },
     { page: "Testimonials", link: "#testimonials" },
     { page: "Gallery", link: "#gallery" },
-    { page: "Contact", link: "#contact" },
-    { page: "Author", link: 'author.html'}
+    { page: "Contact", link: "#contact" }
   ];
 
 function Menu(){
@@ -21,7 +20,6 @@ function Menu(){
   
 Menu();
    
-    
 let about4 = [
    { title: "Market analysis", text: "Market analysis is a detailed assessment of your business's target market and the competitive landscape within a specific industry. This analysis lets you project the success you can expect when you introduce your brand and its products to consumers within the market.", icon:"far fa-3x fa-chart-bar text-center tm-icon"},
    { title: "Fast Support", text: "FastSupport is a genuine website that lets you access your computer from another location using their GoToAssist program. Even though this is a legitimate website, cybercriminals use it to make money. GoToAssist lets tech support people look into problems on your computer and fix them remotely.", icon:"far fa-3x fa-chart-bar text-center tm-icon" },
@@ -51,11 +49,11 @@ let about4 = [
 aboutUs();
 
 let testimonials2 = [
-  { img: "assets/img/testimonial-img-01.jpg", quote: "I always come here because I like their skills.", author: "Catherine Winston (Designer)"},
-  { img: "assets/img/testimonial-img-02.jpg", quote: "I enjoy their pictures, I am satisfied!", author: "Dual Rocker (CEO)"},
-  { img: "assets/img/testimonial-img-03.jpg", quote: "Nice work!", author: "Sandra Soft (Marketing)"},
+  { img: "assets/img/testimonial-img-01.jpg", quote: "I always come here because I like their skills. Efficiency and punctuality are hallmarks of their service", author: "Catherine Winston (Designer)"},
+  { img: "assets/img/testimonial-img-02.jpg", quote: "I enjoy their pictures, I am satisfied! Pricing is fair and transparent - definitely value for money.", author: "Dual Rocker (CEO)"},
+  { img: "assets/img/testimonial-img-03.jpg", quote: "The product quality is consistently outstanding, exceeding my expectations every time. I highly recommend this business.", author: "Sandra Soft (Marketing)"},
   { img: "assets/img/testimonial-img-04.jpg", quote: "They are great at this time when there is so much that is bad", author: "Oliva Mendes (Designer)"},
-  { img: "assets/img/testimonial-img-02.jpg", quote: "Well done!", author: "Jacob Joker (CTO)"},
+  { img: "assets/img/testimonial-img-02.jpg", quote: "I was completely impressed with their professionalism and customer service. Their staff is not only friendly but also highly skilled.", author: "Jacob Joker (CTO)"},
 ];
 
 function test(){
@@ -103,3 +101,22 @@ function gall(){
   }
 
 gall();
+
+$(document).ready(function(){
+    
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+      if ($(this).scrollTop() > 100) {
+          $('.scrollToTop').fadeIn();
+      } else {
+          $('.scrollToTop').fadeOut();
+      }
+  });
+  
+  //Click event to scroll to top
+  $('.scrollToTop').click(function(){
+      $('html, body').animate({scrollTop : 0},800);
+      return false;
+  });
+  
+});
