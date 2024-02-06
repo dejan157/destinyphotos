@@ -102,21 +102,103 @@ function gall(){
 
 gall();
 
-$(document).ready(function(){
-    
-  //Check to see if the window is top if not then display button
-  $(window).scroll(function(){
-      if ($(this).scrollTop() > 100) {
-          $('.scrollToTop').fadeIn();
-      } else {
-          $('.scrollToTop').fadeOut();
-      }
-  });
-  
-  //Click event to scroll to top
-  $('.scrollToTop').click(function(){
-      $('html, body').animate({scrollTop : 0},800);
-      return false;
-  });
-  
-});
+function arrowUp() {
+  var scrollToTopBtn = document.getElementById("arrow");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block";
+  } else {
+      scrollToTopBtn.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+
+window.onscroll = function() {
+  arrowUp();
+};
+
+var objName, objEmail, objOrderDdl, arrOrder, arrTerms;
+
+var reFullname=/^([A-Z][a-z]{2,14}){1,3}$/;
+var reEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var reCity = /^([A-Z][a-z]{2,14})+$/;
+
+window.onload=function(){
+	
+	submitBtn = document.querySelector("#btn-order");
+	submitBtn.addEventListener("click", formValidationOnSubmit);
+
+
+    objName=document.querySelector("#name");
+    objEmail=document.querySelector("#email");
+    arrOrder=document.getElementsByName("gender");
+    arrTerms=document.getElementsByName("terms");
+
+
+    objName.addEventListener("blur",function(){
+        regexValidation(reFullname, objName);
+    });
+
+    objEmail.addEventListener("blur",function(){
+        regexValidation(reEmail, objEmail);
+    });
+
+    createDdl();
+	
+    let ddl=document.querySelector("#order-method");
+    ddl.addEventListener("click",checkDdl);
+
+    submitBtn.addEventListener("click", formValidationOnSubmit);
+}
+
+function formValidationOnSubmit(){
+    regexValidation(reFullname, objName);
+    regexValidation(reEmail, objEmail);
+
+    checkDdl();
+
+    let chbTerms= document.querySelector("#terms");
+    try{
+        if(!chbTerms.checked){
+            chbTerms[0].nextElementSibling.nextElementSibling.classList.remove("d-none");
+            chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-block");
+            throw("Niste procitali uslove koriscenja!");
+        }
+        else{
+            chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-none");
+            chbTerms[0].nextElementSibling.nextElementSibling.classList.remove("d-block");
+            chbTerms[0].nextElementSibling.nextElementSibling.innerHTML="";
+        }
+    }
+    catch(error) {
+				chbTerms.nextElementSibling.nextElementSibling.innerHTML=error;
+    }
+}
+
+function regexValidation(re, obj) {
+    try {
+        if (!re.test(obj.value)) {
+            obj.nextElementSibling.classList.remove("d-none");
+            obj.nextElementSibling.classList.add("d-block");
+
+            if (obj == objName) {
+                throw "It must contain at least one capital letter and a maximum of 15 lowercase letters.";
+            } else if (obj == objEmail) {
+                throw "Incorrect email address, an example of how it should look..";
+            }
+        } else {
+            obj.previousElementSibling.classList.remove("d-inline");
+            obj.previousElementSibling.classList.add("d-none");
+            obj.nextElementSibling.classList.remove("d-block");
+            obj.nextElementSibling.classList.add("d-none");
+            obj.nextElementSibling.innerHTML = "";
+        }
+    } catch (err) {
+        obj.previousElementSibling.classList.remove("d-none");
+        obj.previousElementSibling.classList.add("d-inline");
+        obj.nextElementSibling.innerHTML = err;
+    }
+}

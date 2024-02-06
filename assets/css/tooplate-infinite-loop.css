@@ -64,6 +64,54 @@ footer{
   color: #37A;
 }
 
+#arrow {
+  position:absolute;
+  display: block;
+  float: left;
+  background-color:#ffffff;
+  color: #300c8a; 
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  }
+
+#arrow i {
+   font-size: 40px;
+}
+
+#arrow:hover {
+  color:#ffffff;
+  background-color: #300c8a; 
+}
+
+.carousel-caption {
+  background-color: rgba(4, 85, 26, 0.9) !important;
+  transform: translate(40%, -35%);
+  border-radius: 25px;
+  width: 40% !important;
+  bottom: 25% !important;
+ }
+
+ h1{
+  font-size: 30px;
+  } 
+
+  .white1{
+    color:#fff;
+  }
+
+  .title {
+    width: 50%;
+    margin: 40px auto;
+    color:#ffffff;
+  }
+
+ .image-caption{
+  background: none !important;
+  transform: translate(40%, 15%);
+ }
+
 .scrollToTop{
   width:100px; 
   height:130px;
@@ -183,6 +231,31 @@ footer{
   min-height: 375px;
   position: relative;
 }
+
+.backgr{
+  background-image: url(../img/infinite-loop-01.jpg);
+  background-repeat: no-repeat;
+}
+
+.picture{
+  border-radius: 20%;
+  width: 70%;
+}
+
+@media screen and (max-width: 1200px){
+  .centering1{
+    text-align: center;
+    font-size: 15px;
+  }
+  .me{
+    width: 100%;
+  }
+  .me img{
+    display: block;
+    margin: 0px auto;
+  }
+}
+
 @media screen and (max-width: 950px) {
   .copyright{
     width: 100% !important;
@@ -190,7 +263,10 @@ footer{
   }
   .icons i{
     font-size: 16px;
-}
+  }
+  .me img{
+  width: 90%;
+  }
 }
 @media (min-height: 600px) and (min-width: 1920px) {
   #infinite {
@@ -652,6 +728,10 @@ p {
   line-height: 1.9;
 }
 
+.r{
+  height: 100% !important;
+}
+
 @media (min-width: 768px) {
   .tm-intro-text-container {
     padding-left: 0px;
@@ -715,6 +795,10 @@ p {
     color: #707070;
 	padding-right: 20px;
   }
+
+  .me img{
+    width: 70%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -722,6 +806,10 @@ p {
     max-width: 220px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .me img{
+    width: 70%;
   }
 
   .tm-gallery-container-2 {
