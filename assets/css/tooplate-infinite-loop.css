@@ -799,6 +799,15 @@ p {
   .me img{
     width: 70%;
   }
+
+  #arrow i{
+    font-size: 20px;
+  }
+  #arrow{
+    width: 9%;
+    height: 4%;
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {

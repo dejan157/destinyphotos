@@ -51,9 +51,9 @@ aboutUs();
 let testimonials2 = [
   { img: "assets/img/testimonial-img-01.jpg", quote: "I always come here because I like their skills. Efficiency and punctuality are hallmarks of their service", author: "Catherine Winston (Designer)"},
   { img: "assets/img/testimonial-img-02.jpg", quote: "I enjoy their pictures, I am satisfied! Pricing is fair and transparent - definitely value for money.", author: "Dual Rocker (CEO)"},
-  { img: "assets/img/testimonial-img-03.jpg", quote: "The product quality is consistently outstanding, exceeding my expectations every time. I highly recommend this business.", author: "Sandra Soft (Marketing)"},
+  { img: "assets/img/testimonial-img-03.jpg", quote: "The product quality is consistently outstanding, exceeding my expectations every time.", author: "Sandra Soft (Marketing)"},
   { img: "assets/img/testimonial-img-04.jpg", quote: "They are great at this time when there is so much that is bad", author: "Oliva Mendes (Designer)"},
-  { img: "assets/img/testimonial-img-02.jpg", quote: "I was completely impressed with their professionalism and customer service. Their staff is not only friendly but also highly skilled.", author: "Jacob Joker (CTO)"},
+  { img: "assets/img/testimonial-img-02.jpg", quote: "I was completely impressed with their professionalism and customer service. Their staff is highly skilled.", author: "Jacob Joker (CTO)"},
 ];
 
 function test(){
@@ -64,7 +64,7 @@ function test(){
     <figure class="tm-testimonial-item">
       <img src="${testimonials2[i]["img"]}" alt="Image" class="img-fluid mx-auto">
       <blockquote>${testimonials2[i]["quote"]}</blockquote>
-      <figcaption${testimonials2[i]["author"]}</figcaption>
+      <figcaption>${testimonials2[i]["author"]}</figcaption>
     </figure>
     `
     }
