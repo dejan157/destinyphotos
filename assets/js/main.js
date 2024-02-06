@@ -120,52 +120,65 @@ window.onscroll = function() {
   arrowUp();
 };
 
+var sceneOptions = {duration: 200, offset: -100};
+var elements = $("#tweens h2");
+
+$(elements[0]).wrapEach(/(.)/g, "<span>$1</span>");
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[0])
+					.setTween(TweenMax.staggerTo($(elements[0]).children("span"), 0.0001, {textDecoration: "underline", textTransform: "uppercase"}, 0.2));
+
+
+
+
 var objName, objEmail, objOrderDdl, arrOrder, arrTerms;
 
-var reFullname=/^([A-Z][a-z]{2,14}){1,3}$/;
-var reEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-var reCity = /^([A-Z][a-z]{2,14})+$/;
+var regexName=/^([A-Z][a-z]{2,14}){1,3}$/;
+var regexEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var regex = /^([A-Z][a-z]{2,14})+$/;
 
 window.onload=function(){
 	
 	submitBtn = document.querySelector("#btn-order");
-	submitBtn.addEventListener("click", formValidationOnSubmit);
+	submitBtn.addEventListener("click", validation);
 
 
     objName=document.querySelector("#name");
     objEmail=document.querySelector("#email");
     arrOrder=document.getElementsByName("gender");
-    arrTerms=document.getElementsByName("terms");
+    arrTerms=document.getElementsByName("#checkbox");
 
 
     objName.addEventListener("blur",function(){
-        regexValidation(reFullname, objName);
+        regexValidation(regexName, objName);
     });
 
     objEmail.addEventListener("blur",function(){
-        regexValidation(reEmail, objEmail);
+        regexValidation(regexEmail, objEmail);
     });
 
     createDdl();
 	
     let ddl=document.querySelector("#order-method");
-    ddl.addEventListener("click",checkDdl);
+    ddl.addEventListener("click", checkDdl);
 
-    submitBtn.addEventListener("click", formValidationOnSubmit);
+    submitBtn.addEventListener("click", validation);
 }
 
-function formValidationOnSubmit(){
-    regexValidation(reFullname, objName);
-    regexValidation(reEmail, objEmail);
+function validation(){
+    regexValidation(regexName, objName);
+    regexValidation(regexEmail, objEmail);
 
     checkDdl();
 
-    let chbTerms= document.querySelector("#terms");
+    let chbTerms= document.querySelector("#checkbox");
     try{
         if(!chbTerms.checked){
             chbTerms[0].nextElementSibling.nextElementSibling.classList.remove("d-none");
             chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-block");
-            throw("Niste procitali uslove koriscenja!");
+            throw("You must accept agreement!");
         }
         else{
             chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-none");
@@ -202,3 +215,6 @@ function regexValidation(re, obj) {
         obj.nextElementSibling.innerHTML = err;
     }
 }
+
+validation();
+regexValidation();
