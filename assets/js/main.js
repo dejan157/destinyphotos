@@ -102,119 +102,106 @@ function gall(){
 
 gall();
 
-function arrowUp() {
-  var scrollToTopBtn = document.getElementById("arrow");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      scrollToTopBtn.style.display = "block";
-  } else {
-      scrollToTopBtn.style.display = "none";
-  }
-}
+// function arrowUp() {
+//   var scrollToTopBtn = document.getElementById("arrow");
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//       scrollToTopBtn.style.display = "block";
+//   } else {
+//       scrollToTopBtn.style.display = "none";
+//   }
+// }
 
-function scrollToTop() {
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0; 
-}
+// function scrollToTop() {
+//   document.body.scrollTop = 0; 
+//   document.documentElement.scrollTop = 0; 
+// }
 
-window.onscroll = function() {
-  arrowUp();
-};
+// window.onscroll = function() {
+//   arrowUp();
+// };
 
-var sceneOptions = {duration: 200, offset: -100};
-var elements = $("#tweens h2");
+// var sceneOptions = {duration: 200, offset: -100};
+// var elements = $("#tweens h2");
 
-$(elements[0]).wrapEach(/(.)/g, "<span>$1</span>");
-				new ScrollScene(sceneOptions)
-					.addTo(controller)
-					.triggerHook("onCenter")
-					.triggerElement(elements[0])
-					.setTween(TweenMax.staggerTo($(elements[0]).children("span"), 0.0001, {textDecoration: "underline", textTransform: "uppercase"}, 0.2));
-
-
+// $(elements[0]).wrapEach(/(.)/g, "<span>$1</span>");
+// 				new ScrollScene(sceneOptions)
+// 					.addTo(controller)
+// 					.triggerHook("onCenter")
+// 					.triggerElement(elements[0])
+// 					.setTween(TweenMax.staggerTo($(elements[0]).children("span"), 0.0001, {textDecoration: "underline", textTransform: "uppercase"}, 0.2));
 
 
-var objName, objEmail, objOrderDdl, arrOrder, arrTerms;
 
-var regexName=/^([A-Z][a-z]{2,14}){1,3}$/;
-var regexEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-var regex = /^([A-Z][a-z]{2,14})+$/;
 
+var objName, objEmail, objMessage, arrOrder, Terms, subm;
+
+var regexName="^[A-Z][a-z]{2,14} [A-Z][a-z]{2,14}$";
+var regexEmail= "^[a-z]{2,20}@[a-z]{3,15}\.com$";
+var regexMessage = "^([A-Z][a-z]{2,20}\s*)+$";
+objName=document.querySelector("#name");
+objEmail=document.querySelector("#email");
+objMessage=document.querySelector("#message");
+arrOrder=document.getElementsByName("gender");
+Terms=document.querySelector("#checkbox");
 window.onload=function(){
-	
-	submitBtn = document.querySelector("#btn-order");
-	submitBtn.addEventListener("click", validation);
-
-
-    objName=document.querySelector("#name");
-    objEmail=document.querySelector("#email");
-    arrOrder=document.getElementsByName("gender");
-    arrTerms=document.getElementsByName("#checkbox");
-
 
     objName.addEventListener("blur",function(){
-        regexValidation(regexName, objName);
+        regexValidation(regexName, objName, "Wrong name type");
     });
 
     objEmail.addEventListener("blur",function(){
-        regexValidation(regexEmail, objEmail);
+        regexValidation(regexEmail, objEmail, "Wrong email type");
     });
 
-    createDdl();
-	
-    let ddl=document.querySelector("#order-method");
-    ddl.addEventListener("click", checkDdl);
+    objMessage.addEventListener("blur",function(){
+      regexValidation(regexMessage, objMessage, "Wrong message type");
+    });
 
-    submitBtn.addEventListener("click", validation);
+    Terms.addEventListener("click",function(){
+      termsValidation();
+    });
+
+    let form=document.querySelector("#frm");
+    form.onsubmit=validation;
 }
 
 function validation(){
-    regexValidation(regexName, objName);
-    regexValidation(regexEmail, objEmail);
-
-    checkDdl();
-
-    let chbTerms= document.querySelector("#checkbox");
-    try{
-        if(!chbTerms.checked){
-            chbTerms[0].nextElementSibling.nextElementSibling.classList.remove("d-none");
-            chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-block");
-            throw("You must accept agreement!");
-        }
-        else{
-            chbTerms[0].nextElementSibling.nextElementSibling.classList.add("d-none");
-            chbTerms[0].nextElementSibling.nextElementSibling.classList.remove("d-block");
-            chbTerms[0].nextElementSibling.nextElementSibling.innerHTML="";
-        }
-    }
-    catch(error) {
-				chbTerms.nextElementSibling.nextElementSibling.innerHTML=error;
-    }
+  if(regexValidation(regexName, objName, "Wrong name type") &&
+     regexValidation(regexEmail, objEmail, "Wrong email type") &&
+     regexValidation(regexMessage, objMessage, "Wrong message type") &&
+     termsValidation()){
+     return true;
+     }
+     return false;
 }
 
-function regexValidation(re, obj) {
-    try {
-        if (!re.test(obj.value)) {
-            obj.nextElementSibling.classList.remove("d-none");
-            obj.nextElementSibling.classList.add("d-block");
-
-            if (obj == objName) {
-                throw "It must contain at least one capital letter and a maximum of 15 lowercase letters.";
-            } else if (obj == objEmail) {
-                throw "Incorrect email address, an example of how it should look..";
-            }
-        } else {
-            obj.previousElementSibling.classList.remove("d-inline");
-            obj.previousElementSibling.classList.add("d-none");
-            obj.nextElementSibling.classList.remove("d-block");
-            obj.nextElementSibling.classList.add("d-none");
-            obj.nextElementSibling.innerHTML = "";
-        }
-    } catch (err) {
-        obj.previousElementSibling.classList.remove("d-none");
-        obj.previousElementSibling.classList.add("d-inline");
-        obj.nextElementSibling.innerHTML = err;
-    }
+function termsValidation(){
+  let chbTerms= document.querySelector("#checkbox");
+  console.log(chbTerms.parentElement.nextElementSibling);
+  if(!chbTerms.checked){
+    chbTerms.parentElement.nextElementSibling.classList.remove("d-none");
+    chbTerms.parentElement.nextElementSibling.classList.add("d-block");
+    chbTerms.parentElement.nextElementSibling.innerHTML="You must accept agreement";
+    return false;
+  }
+  chbTerms.parentElement.nextElementSibling.classList.add("d-none");
+  chbTerms.parentElement.nextElementSibling.classList.remove("d-block");
+  chbTerms.parentElement.nextElementSibling.innerHTML="";
+  return true;
 }
 
-validation();
-regexValidation();
+function regexValidation(regex, object, error) {console.log(object.nextElementSibling);
+  let regex4=new RegExp(regex);
+  if(!regex4.test(object.value)){
+    object.nextElementSibling.classList.remove("d-none");
+    object.nextElementSibling.classList.add("d-block");
+    object.nextElementSibling.innerHTML=error;
+    console.log("Gre[ska");
+    return false;
+  }
+  object.nextElementSibling.classList.remove("d-block");
+  object.nextElementSibling.classList.add("d-none");
+  object.nextElementSibling.innerHTML="";
+  console.log("negreska");
+  return true;
+} 

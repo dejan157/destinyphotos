@@ -113,9 +113,12 @@
                 </p><br>
             </div>  
             <div class="col-sm-12 col-md-6">
-              <form action="" method="get">
-                <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-                <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
+              <form action="" method="get" id="frm">
+                <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" />
+                <p class="font-italic d-none"></p>
+
+                <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" />
+                <p class="font-italic d-none"></p>
                 
                 <div class="col-md-6 mb-3" >
                     <label for="gender" class="labelSize">Gender:</label><br/>
@@ -130,18 +133,18 @@
                     <p class="font-italic d-none" id="wrongG">You must select gender</p>
                 </div>
 
-                <textarea id="message" name="message" rows="4" placeholder="Message" class="tm-input" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Message" class="tm-input" ></textarea>
+                <p class="font-italic d-none"></p>
                  
                 <div class="mb-3">
-                  <div class="custom-checkbox">
-                    <label for="checkbox">
-                      <input type="checkbox" id="checkbox"> I want newsletter
-                    </label>
+                  <div class="custom-checkbox">                      
+                    <input type="checkbox" id="checkbox"> 
+                    <label for="checkbox">I accept terms</label>
                   </div>
                   <p class="font-italic d-none" id="wrongC">You must accept agreement</p>
                 </div>
 
-                <button type="submit" class="btn tm-btn-submit">Submit</button>
+                <button id="sub" type="submit" class="btn tm-btn-submit">Submit</button>
               </form>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -207,13 +210,16 @@
     </div>
     
 
-    <script src="assets/js/main.js"></script>
+    
+
     <script src="assets/js/jquery-1.9.1.min.js"></script>     
     <script src="assets/slick/slick.min.js"></script>
     <script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/easing.min.js"></script>
     <script src="assets/js/jquery.singlePageNav.min.js"></script>     
-    <script src="assets/js/bootstrap.min.js"></script> 
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/main.js"></script>
     
     <script>
 
