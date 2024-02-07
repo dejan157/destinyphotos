@@ -64,9 +64,9 @@ footer{
   color: #37A;
 }
 
-#arrow {
-  position:absolute;
-  display: block;
+#arrow23 {
+  position: fixed !important;
+  display: none;
   float: left;
   background-color:#ffffff;
   color: #300c8a; 
@@ -74,13 +74,15 @@ footer{
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
+  bottom: 40px;
+  left: 40px;
   }
 
-#arrow i {
+#arrow23 i {
    font-size: 40px;
 }
 
-#arrow:hover {
+#arrow23:hover {
   color:#ffffff;
   background-color: #300c8a; 
 }
@@ -800,13 +802,14 @@ p {
     width: 70%;
   }
 
-  #arrow i{
+  #arrow23 i{
     font-size: 20px;
   }
-  #arrow{
+  #arrow23{
     width: 9%;
     height: 4%;
     padding: 0;
+    position: fixed;
   }
 }
 
