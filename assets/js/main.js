@@ -102,33 +102,33 @@ function gall(){
 
 gall();
 
-// function arrowUp() {
-//   var scrollToTopBtn = document.getElementById("arrow");
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//       scrollToTopBtn.style.display = "block";
-//   } else {
-//       scrollToTopBtn.style.display = "none";
-//   }
-// }
+function arrowUp() {
+  var scrollToTopBtn = document.getElementById("arrow");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = "block";
+  } else {
+      scrollToTopBtn.style.display = "none";
+  }
+}
 
-// function scrollToTop() {
-//   document.body.scrollTop = 0; 
-//   document.documentElement.scrollTop = 0; 
-// }
+function scrollToTop() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
 
-// window.onscroll = function() {
-//   arrowUp();
-// };
+window.onscroll = function() {
+  arrowUp();
+};
 
-// var sceneOptions = {duration: 200, offset: -100};
-// var elements = $("#tweens h2");
+var sceneOptions = {duration: 200, offset: -100};
+var elements = $("#tweens h2");
 
-// $(elements[0]).wrapEach(/(.)/g, "<span>$1</span>");
-// 				new ScrollScene(sceneOptions)
-// 					.addTo(controller)
-// 					.triggerHook("onCenter")
-// 					.triggerElement(elements[0])
-// 					.setTween(TweenMax.staggerTo($(elements[0]).children("span"), 0.0001, {textDecoration: "underline", textTransform: "uppercase"}, 0.2));
+$(elements[0]).wrapEach(/(.)/g, "<span>$1</span>");
+				new ScrollScene(sceneOptions)
+					.addTo(controller)
+					.triggerHook("onCenter")
+					.triggerElement(elements[0])
+					.setTween(TweenMax.staggerTo($(elements[0]).children("span"), 0.0001, {textDecoration: "underline", textTransform: "uppercase"}, 0.2));
 
 
 
