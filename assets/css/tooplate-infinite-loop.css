@@ -68,11 +68,11 @@ footer{
   position: fixed !important;
   display: none;
   float: left;
-  background-color:#ffffff;
+  /* background-color:#ffffff; */
   color: #300c8a; 
   padding: 5px 10px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   transition: all 0.3s;
   bottom: 40px;
   left: 40px;

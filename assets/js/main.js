@@ -324,12 +324,10 @@ function regexValidation(regex, object, error) {console.log(object.nextElementSi
     object.nextElementSibling.classList.remove("d-none");
     object.nextElementSibling.classList.add("d-block");
     object.nextElementSibling.innerHTML=error;
-    console.log("Gre[ska");
     return false;
   }
   object.nextElementSibling.classList.remove("d-block");
   object.nextElementSibling.classList.add("d-none");
   object.nextElementSibling.innerHTML="";
-  console.log("negreska");
   return true;
 } 
