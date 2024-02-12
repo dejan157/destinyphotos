@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="keywords" content="destiny, photo, photos, hleb, kifla, pecivo, burek"/>
+    <meta name="keywords" content="destiny, photo, photos, photography, picture"/>
 		<meta name="author" content="Dejan Savanović"/>
 		<meta name="description" content="Destiny Photos photoshooting company."/>
 		<meta name="copyright" content="All rights reserved Destiny Photos"/>
@@ -46,18 +46,19 @@
         </div>        
       </div>
 
-      <div class="tm-next tm-intro-next">
-        <a href="#aboutus" class="text-center tm-down-arrow-link">
-          <i class="fas fa-2x fa-arrow-down tm-down-arrow"></i>
+      <div class="tm-next tm-intro-next arrow">
+        <a href="index.html#aboutus" class="text-center tm-down-arrow-link">
+          <i class="fa-solid fa-angle-down tm-down-arrow"></i>
         </a>
-      </div>      
+      </div>
+
     </section>
 
     <section id="aboutus" class="tm-section-pad-top">
-      <div class="container">
+      <div class="container" id="ad2">
         <div class="row tm-content-box">
           <div class="col-lg-12 col-xl-12">
-            <div class="tm-intro-text-container">
+            <div class="tm-intro-text-container text-justify">
                 <h2 class="tm-text-primary mb-4 tm-section-title">About us</h2>
                 <p class="mb-4 tm-intro-text">
                   In general, each photography process will include pre-production, shooting, and post-production, with plenty of detailed steps in each stage. 
@@ -75,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div id="aboutdiv" class="row tm-content-box">
+        <div id="aboutdiv" class="row tm-content-box text-justify">
         </div>
       </div>
     </section>
@@ -86,7 +87,7 @@
           <div id="tweens" class="col-lg-12 tm-content-box">
             <h2 class="text-white text-center mb-4 tm-section-title">Testimonials</h2>
             <p class="mx-auto tm-section-desc text-center">Look at what they said about us</p>
-            <div class="mx-auto tm-gallery-container tm-gallery-container-2">
+            <div class="mx-auto tm-gallery-container tm-gallery-container-2 text-justify">
               <div id="pictures" class="tm-testimonials-carousel">
               </div>
             </div>
@@ -96,7 +97,53 @@
       <div class="tm-bg-overlay"></div>
     </section>
     
-    <section id="gallery" class="tm-section-pad-top">
+    <section id="howto" class="tm-section-pad-top">
+      <div class="container" id="ad2">
+        <div class="row tm-content-box">
+          <div class="col-lg-12 col-xl-12">
+            <div class="tm-intro-text-container text-justify">
+                <h2 class="tm-text-primary mb-4 tm-section-title text-center">How to recognize good photography?</h2>
+                <p class="mb-5 tm-intro-text">
+                  A good photograph focuses on at least one subject, makes that subject clear in the photo, and composes the entire image in a way that is visual appealing (usually relying on the rule of thirds.).
+                  Photography is a wonderful pastime and a great way to preserve memories. Therefore, it’s nice to know when you have taken a good photo and when you might want to learn a little more about the art of photography.
+                </p>
+                <h3 class="tm-text-primary mb-4 text-center">Rule of Thirds</h3>
+                <p class="mb-5 tm-intro-text">
+                  The Rule of Thirds is based on an ancient Greek mathematical discovery that is based on the Golden Rectangle. In this mathematical theory, an well-composed image should be cut into three portions that are directly proportional across the horizontal and vertical planes of the page.
+                  The Rule of Thirds is based on an ancient Greek mathematical discovery that is based on the Golden Rectangle. In this mathematical theory, an well-composed image should be cut into three portions that are directly proportional across the horizontal and vertical planes of the page.
+                  Objects of importance should be placed on the lines. If possible, objects of special importance should be placed at the crosses of the lines. These lines cut the photograph into thirds.
+                  For this reason, many cameras have a view-finder with a similar-looking grid. Use the rule of thirds to set up your photograph in order to achieve surprisingly well-composed results!
+                </p>
+                <h3 class="tm-text-primary mb-4 text-center">Focus</h3>
+                <p class="mb-5 tm-intro-text">
+                  One of the tell-tale signs of a new photographer is that the images in the photo all tend to be just a little bit fuzzy. While it may be important to focus on one image and blur out the background, it is generally a rule of thumb that at least one subject in the image should be sharply focused.
+                  If you have a photograph with images that are out of focus, you may want to learn more about focal length and focusing in general. Often, images will be out of focus because of improper camera handling. However, if you have a manual camera, you may also want to adjust your eyepiece to suit your eyesight.
+                </p>
+                <h3 class="tm-text-primary mb-4 text-center">Boundaries</h3>
+                <p class="tm-intro-text">
+                  Good photography generally has all of the main subjects of the photo clearly within the boundary of the photograph. In such photos, even if it is a group shot of friends, every part of each person’s body will be in the photo. In bad photography, often half of a body will make it into the photo.
+                  Take your time to set up a photo to make sure that everything that you want to be present in the final image makes it into the frame.
+                  A good photograph focuses on at least one subject, makes that subject clear in the photo, and composes the entire image in a way that is visual appealing (usually relying on the rule of thirds.)
+                  Beginning photographers (and even many advanced photographers) have to take many photos in order to get that one perfect shot that they are most proud of. Therefore, do not be discouraged if your first photographs are not all that you expected. Good photography, after all, requires practice and mastery of these three components:
+                  <ul>
+                    <li>
+                      the Rule of Thirds  
+                    </li>
+                    <li>
+                      Focus
+                    </li>
+                    <li>
+                      Boundaries  
+                    </li>
+                  </ul>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" >
       <div class="container tm-container-gallery">
         <div class="row">
           <div class="text-center col-12">
@@ -158,9 +205,23 @@
                 </p>
                  
                 <div class="mb-3">
+                  <label for="selectProgram">Your favorite program (optional):</label><br/>
+                  <select name="sp" id="selectProgram" class="selectP">
+                      <option value="-1">Select program:</option>
+                      <option value="0">Adobe Photoshop</option>
+                      <option value="1">GIMP</option>
+                      <option value="2">Canva</option>
+                      <option value="3">Portrait Pro</option>
+                      <option value="4">Photo Scape</option>
+                      <option value="5">Pixlr</option>
+                      <option value="6">Capture One</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
                   <div class="custom-checkbox">                      
                     <input type="checkbox" id="checkbox"> 
-                    <label for="checkbox">I accept terms</label>
+                    <label for="checkbox">I accept terms and conditions</label>
                   </div>
                   <p class="font-italic d-none" id="wrongC">
                     You must accept agreement
@@ -188,19 +249,31 @@
                 <div class="contact-item">
                   <a href="mailto:mail@company.com" class="item-link">
                       <i class="far fa-2x fa-envelope mr-4"></i>
-                      <span class="mb-0">destinyphotos@destiny.com</span>
+                      <span class="mb-0">dp@destiny.com</span>
                   </a>              
                 </div> 
                 <div class="contact-item">
                   <a href="https://www.google.com/maps" class="item-link">
                       <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
-                      <span class="mb-0">Tracy Mcgrady 1, 10294 </span>
+                      <span class="mb-0">Tracy Mcgrady 1, 10294</span>
                   </a>              
                 </div>
                 <div class="contact-item">
-                  <a href="tel:0100200340" class="item-link">
+                  <a href="https://www.google.com/maps" class="item-link">
+                      <i class="fas fa-2x fa-map-marker-alt mr-4"></i>
+                      <span class="mb-0">Grant Hill 33, 24094</span>
+                  </a>              
+                </div>
+                <div class="contact-item">
+                  <a href="tel:2556625566" class="item-link">
                       <i class="fas fa-2x fa-phone-square mr-4"></i>
                       <span class="mb-0">255-662-5566</span>
+                  </a>              
+                </div>
+                <div class="contact-item">
+                  <a href="tel:0533522345" class="item-link">
+                      <i class="fas fa-2x fa-phone-square mr-4"></i>
+                      <span class="mb-0">053-352-2345</span>
                   </a>              
                 </div>
                 <div class="contact-item">&nbsp;</div>
@@ -210,7 +283,7 @@
     
     </section>
     <div class="w-100">
-      <footer class="bg-footer text-center text-white w-100">
+      <footer class="bg-footer text-center text-white w-100" id="footer">
       <div class="p-4 pb-0 w-100">
         <section class="mb-4" id="links">
         </section>

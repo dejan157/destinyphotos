@@ -90,29 +90,39 @@ aboutUs();
 
 let testimonials2 = [
   { 
-    img: "assets/img/testimonial-img-01.jpg", 
-    quote: "I always come here because I like their skills. Efficiency and punctuality are hallmarks of their service", 
-    author: "Catherine Winston (Designer)"
+    img: "assets/img/testimonial1.jpg", 
+    quote: "I was very impressed with the quality of the product I received. It was exactly what I was hoping for.", 
+    author: "Sue Bird (Photographer)"
   },
   { 
-    img: "assets/img/testimonial-img-02.jpg", 
+    img: "assets/img/testimonial2.jpg", 
+    quote: "I always come here because I like their skills. Efficiency and punctuality are hallmarks of their service.", 
+    author: "Monica Geller (Designer)"
+  },
+  { 
+    img: "assets/img/testimonial3.jpg", 
     quote: "I enjoy their pictures, I am satisfied! Pricing is fair and transparent - definitely value for money.", 
-    author: "Dual Rocker (CEO)"
+    author: "Paul George (CEO)"
+  },
+  { 
+    img: "assets/img/testimonial-img-01.jpg", 
+    quote: "They have xcellent customer support! Efficiency and punctuality are hallmarks of their service", 
+    author: "Rachel Green (Designer)"
   },
   { 
     img: "assets/img/testimonial-img-03.jpg", 
-    quote: "The product quality is consistently outstanding, exceeding my expectations every time.", 
-    author: "Sandra Soft (Marketing)"
+    quote: "The product quality is consistently outstanding, that exceeding my expectations every time.", 
+    author: "Diana Taurasi (Marketing)"
   },
   { 
     img: "assets/img/testimonial-img-04.jpg", 
-    quote: "They are great at this time when there is so much that is bad", 
+    quote: "They are great at this time when there is so much that is bad. I like Destiny Photos!", 
     author: "Oliva Mendes (Designer)"
   },
   { 
     img: "assets/img/testimonial-img-02.jpg", 
     quote: "I was completely impressed with their professionalism and customer service. Their staff is highly skilled.", 
-    author: "Jacob Joker (CTO)"
+    author: "Derek Fisher (CTO)"
   },
 ];
 
@@ -134,14 +144,14 @@ test();
 
 let gallery = [
   { 
-    a: "assets/img/gallery-img-01.jpg", 
-    img: "assets/img/gallery-tn-01.jpg", 
-    naslov: "PHYSICAL HEALTH EXERCISE!"
+    a: "assets/img/gallery1.jpg", 
+    img: "assets/img/gallery1.jpg", 
+    naslov: "PINK SKY"
   },
   { 
-    a: "assets/img/gallery-img-02.jpg", 
-    img: "assets/img/gallery-tn-02.jpg", 
-    naslov: "RAINON GLASS"
+    a: "assets/img/gallery2.jpg", 
+    img: "assets/img/gallery2.jpg", 
+    naslov: "BLUE SNOW CAR"
   },
   { 
     a: "assets/img/gallery-img-03.jpg", 
@@ -166,12 +176,12 @@ let gallery = [
   { 
     a: "assets/img/gallery-img-01.jpg", 
     img: "assets/img/gallery-tn-01.jpg", 
-    naslov: "ANOTHER EXERCISETIME"
+    naslov: "EXERCISETIME"
   },
   { 
     a: "assets/img/gallery-img-02.jpg", 
     img: "assets/img/gallery-tn-02.jpg", 
-    naslov: "ANOTHER RAINON GLASS"
+    naslov: "RAINON GLASS"
   },
 ];
 
@@ -243,7 +253,7 @@ function arrowUp() {
     });
   }
 
-  let op=document.querySelector("#infinite");
+  let op=document.getElementById("infinite");
 
   if(op!=null && scrollToTopBtn.style.display=="block"){
     $(op).waypoint(function() {

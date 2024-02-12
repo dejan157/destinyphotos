@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
-
+*{
+  scroll-behavior: smooth;
+}
 body {
 	font-family: "Raleway", sans-serif;
 	font-size: 1.2em;
@@ -80,11 +82,6 @@ footer{
 
 #arrow23 i {
    font-size: 40px;
-}
-
-#arrow23:hover {
-  color:#ffffff;
-  background-color: #300c8a; 
 }
 
 .carousel-caption {
@@ -232,6 +229,7 @@ footer{
   height: 100vh;
   min-height: 375px;
   position: relative;
+  clip-path: polygon(0% 0%,100% 0%,100% 88%,50% 100%,0% 88%);
 }
 
 .backgr{
@@ -346,16 +344,8 @@ footer{
 .tm-down-arrow {
   	color: #FFF;
     cursor: pointer;
-    background: #357;
     padding: 15px 40px;
     transition: all 0.3s ease;
-}
-
-.tm-down-arrow:hover,
-.tm-down-arrow:focus {
-  color: #FFF;
-  background: #37A;
-  padding: 20px 50px;
 }
 
 /* Introduction */
@@ -835,4 +825,16 @@ p {
   .tm-gallery-item {
     margin: 0;
   }
+}
+
+.arrow {
+  margin-top:70px;
+}
+
+.selectP{
+  width:90%;
+  background-color: rgba(7, 46, 54, 0.5);
+  border: none;
+  color:white;
+  padding: 1%;
 }
