@@ -220,8 +220,6 @@ footer{
   color: #707070;
 }
 
-/* Hero */
-
 #infinite {
 	background-color: #222;
   background-image: url(../img/infinite-loop-01.jpg);
@@ -229,7 +227,7 @@ footer{
   height: 100vh;
   min-height: 375px;
   position: relative;
-  clip-path: polygon(0% 0%,100% 0%,100% 88%,50% 100%,0% 88%);
+  /* clip-path: polygon(0% 0%,100% 0%,100% 88%,50% 100%,0% 88%); */
 }
 
 .backgr{
